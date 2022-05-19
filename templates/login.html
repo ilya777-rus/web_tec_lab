@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <form method="POST" action="/login">
+        <div class="auth-form">
+            <p><input name="loginField" type="text" placeholder="Login"></p>
+            <p><input name="passField" type="password" placeholder="Password"></p>
+            <button type="submit" id="sendbtn">Войти</button>
+            <button type="submit" id="sendbtn" name="regBtn" value="true">Регистрация</button>
+        </div>
+    </form>
+
+{% endblock %}

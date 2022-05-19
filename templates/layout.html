@@ -1,0 +1,45 @@
+<html>
+<head>
+		<meta charset="utf-8">
+		<title>{{title}}</title>
+		<link rel="stylesheet" href="/static/stylesheets/styles.css">
+		<script type="text/javascript" src="/static/javascripts/jquery-3.6.0.min.js"></script>
+</head>
+		<body>
+		        <form name="search" class="sinput" action="#" method="get">
+		         <a class="icona" href="/"><img src="/static/images/logo.png" alt="Japanese Cars"></a>
+			     <input type="search" name="q" placeholder="Найти"><button type="submit">поиск</button>
+				</form>				
+			<div class="wrapper">
+			{% if navmenu %}
+					<nav>
+						<ul class="top-menu">
+							{% for item in navmenu %}
+								<li><a href="{{item.addr}}">{{item.name}}</a></li>
+							{% endfor %}
+						</ul>
+					</nav>
+				{% endif %}
+				<header>
+					<div class="heading">
+						<h1 id="headname">{{pname}}</h1>
+					</div>
+				</header>
+				<main id="{{pname}}">
+					{% block content %}{% endblock %}
+				</main>
+			</div>
+			<footer>
+			<img class = "line" src="static/images/common/line.png" width="100%" height="4px">
+				<div class="footer">
+					<div id="social">
+						<h3>Наши сети</h3>
+						<a href="http://twitter.com/" class="social-icon twitter"></a>
+						<a href="http://facebook.com/" class="social-icon facebook"></a>
+					</div>
+				</div>
+			</footer>
+			<script type="text/javascript" src="/static/javascripts/topmenu.js"></script>
+			<script type="text/javascript" src="/static/javascripts/jqfunc.js"></script>
+		</body>
+</html>
