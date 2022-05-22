@@ -117,6 +117,9 @@ def get_contact_req_all():
 
 @app.route('/api/contactrequest/<int:id>', methods=['GET'])
 # Получаем запись по id
+def get_contact_req_by_id(id):
+    response = dbservice.get_contact_req_by_id(id)
+    return json_response(response)
 
 
 @app.route('/api/contactrequest/author/<string:firstname>', methods=['GET'])
