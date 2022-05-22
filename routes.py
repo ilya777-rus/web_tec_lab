@@ -45,15 +45,6 @@ navmenu = [
 
 
 # Функция-декоратор для проверки авторизации пользователя
-def login_required(route_func):
-    @functools.wraps(route_func)
-    def decorated_route(*args, **kwargs):
-        # Если не установлен параметр сессии user или значение cookie 'AuthToken' не равно логину пользователя
-        if not session.get('user') or request.cookies.get('AuthToken') != session.get('user'):
-            # перенаправляем на страницу авторизации
-            return redirect(url_for('login'))
-        return route_func(*args, **kwargs)
-    return decorated_route
 
 
 # Обработка запроса к индексной странице
