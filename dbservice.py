@@ -18,7 +18,9 @@ def get_contact_req_all():
 
 
 # Получаем запрос с фильтром по id
-
+def get_contact_req_by_id(id):
+    result = db.session.execute(f"SELECT * FROM contactrequests WHERE id = {id}").fetchone()
+    return dict(result)
 
 
 # Получаем все запросы по имени автора
